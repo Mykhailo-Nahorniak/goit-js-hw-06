@@ -15,9 +15,11 @@ const images = [
 
 const galleryEL = document.querySelector('.gallery');
 
-const galleryItem = images.map(image => {
-  galleryEL.insertAdjacentHTML(
-    'afterbegin',
-    `<li class="list-item"><img src="${image.url}" alt="${image.alt}" width=100% /></li>`
-  );
-});
+const galleryItem = images
+  .map(
+    image =>
+      `<li class="list-item"><img src="${image.url}" alt="${image.alt}" 
+  width=100% /></li>`
+  )
+  .join();
+galleryEL.insertAdjacentHTML('afterbegin', galleryItem);
